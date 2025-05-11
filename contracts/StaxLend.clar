@@ -20,7 +20,7 @@
       (try! (stx-transfer? amount tx-sender (as-contract tx-sender)))
       (map-set deposits 
         { user: tx-sender } 
-        { amount: (+ amount (get amount current-balance)), last-deposit: (unwrap-panic (get-block-info? time u0)) })
+        { amount: (+ amount (get amount current-balance)), last-deposit: u0 })
       (ok amount)
     )
   )
